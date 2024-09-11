@@ -119,7 +119,7 @@ def generate_zip_with_charts(charts_data):
     return zip_buffer
 
 # Funzione per mostrare un messaggio temporaneo
-def show_temporary_message(message, duration=3, message_type="success"):
+def show_temporary_message(message, duration=1, message_type="success"):
     placeholder = st.empty()
     if message_type == "success":
         placeholder.success(message)
@@ -139,7 +139,7 @@ def validate_excel_columns(df, required_columns):
     return all(column in df.columns for column in required_columns)
 
 def main():
-    st.title("Analisi PCR")
+    st.title("PCR Report")
 
     # Colonne richieste per l'analisi (basate sul file caricato)
     required_columns = ['Unnamed: 0', 'P+FGF P1 N.', 'P+FGF P1 I.', 'P+PL P1 N.', 'P+PL P1 I.',
